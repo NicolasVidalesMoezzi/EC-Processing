@@ -1,17 +1,33 @@
+import processing.serial.*;
+
+final float UMBRAL = 0.5;
+
+Serial port;
+float val;
+
 elipsoide Elipse2;
 
 void setup()
 {
   size(400,400);
-  surface.setTitle("Nigger");
+  frameRate(10);
+  surface.setTitle("Prueba");
+  port = new Serial(this, 9600);
 }
 
 void draw()
 {
-
+  if(0 < port.available())
+  {
+    val = port.read();
+  }
+  if(val > UMBRAL)
+  {
+    crearObjeto();
+  }
 }
 
-void mouseClicked()
+void crearObjeto()
 {
   float anch = random(10,200);
   float alt = random(10,200);
