@@ -12,7 +12,7 @@ void setup()
   size(400,400);
   frameRate(10);
   surface.setTitle("Prueba");
-  port = new Serial(this, 9600);
+  port = new Serial(this,"COM5",9600);
 }
 
 void draw()
@@ -20,6 +20,7 @@ void draw()
   if(0 < port.available())
   {
     val = port.read();
+    println(val);
   }
   if(val > UMBRAL)
   {
