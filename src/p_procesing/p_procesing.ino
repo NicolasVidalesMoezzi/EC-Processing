@@ -1,4 +1,7 @@
-int switchPin = 4;  // Switch connected to pin 4
+int switchPin = 0;  // Switch connected to pin 4
+
+uint8_t uno = 1;
+uint8_t cero = 0;
 
 void setup() {
   pinMode(switchPin, INPUT);  // Set pin 0 as an input
@@ -7,9 +10,9 @@ void setup() {
 
 void loop() {
   if (digitalRead(switchPin) == HIGH) {  // If switch is ON,
-    Serial.write(1);                     // send 1 to Processing
+    Serial.write(uno);                     // send 1 to Processing
   } else {                               // If the switch is not ON,
-    Serial.write(0);                     // send 0 to Processing
+    Serial.write(cero);                     // send 0 to Processing
   }
   delay(100);                            // Wait 100 milliseconds
 }

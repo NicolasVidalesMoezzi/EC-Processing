@@ -1,7 +1,5 @@
 import processing.serial.*;
 
-final float UMBRAL = 0.5;
-
 Serial port;
 float val;
 
@@ -22,7 +20,7 @@ void draw()
     val = port.read();
     println(val);
   }
-  if(val > UMBRAL)
+  if(val == 1)
   {
     crearObjeto();
   }
